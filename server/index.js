@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import { createServer } from "http";
 import path from "path";
@@ -11,12 +12,13 @@ const io = new Server(server, {
   cors: { origin: "*" },
 });
 
+app.use(cors());
 app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("dist"));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "dist", "index.html"));
+    req.sendFile(path.resolve(__dirname, "dist", "index.html"));
   });
 }
 
