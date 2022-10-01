@@ -20,6 +20,13 @@ body {
 }
 
 #container {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   overflow: hidden;
+}
+#container h1 {
+  font-size: 2.6rem;
+  padding: 4rem;
+  padding-bottom: 0;
 }

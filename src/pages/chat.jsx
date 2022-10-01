@@ -47,7 +47,7 @@ export default function Chat() {
         return;
       case '/available':
         setTexts((oldTexts) => [...oldTexts, {
-          message: '\nActive users:\n' + available.join('\n')
+          message: '\nActive users:\n' + available.join('\n') + '\n\n'
         }]);
         return;
       default:

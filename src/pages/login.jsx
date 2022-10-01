@@ -12,6 +12,9 @@ export default function Login() {
   };
 
   return (
-    <Terminal texts={[{message: 'You are?'}]} onNewInputText={onNext} />
+    <>
+      <h1>Simple Messenger</h1>
+      <Terminal texts={[{message: 'You are?'}]} onNewInputText={onNext} />
+    </>
   );
 }
