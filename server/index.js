@@ -6,6 +6,8 @@ import { Server } from "socket.io";
 import { addUser, getUser, getUsers, removeUser } from "./db.js";
 
 const port = process.env.PORT || 5000;
+const __dirname = path.resolve(path.dirname(""));
+
 const app = express();
 const server = createServer(app);
 const io = new Server(server, {
@@ -18,7 +20,7 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("dist"));
   app.get("*", (req, res) => {
-    req.sendFile(path.resolve(__dirname, "dist", "index.html"));
+    res.sendFile(path.resolve(__dirname, "dist", "index.html"));
   });
 }
 
