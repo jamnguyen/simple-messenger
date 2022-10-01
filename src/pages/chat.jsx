@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import io from 'socket.io-client';
-import Terminal from "../components/Terminal/Terminal";
+import Terminal from "../components/Terminal/terminal";
 import { useApp } from "../contexts/app-provider";
 
 export default function Chat() {
