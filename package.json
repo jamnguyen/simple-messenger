@@ -1,23 +1,33 @@
 {
   "type": "module",
-  "name": "simple-messenger-node",
+  "name": "simple-messenger",
   "version": "1.0.0",
-  "description": "Node server of Simple Messenger.",
-  "main": "app.js",
+  "description": "Simple Messenger.",
+  "source": "public/index.html",
   "scripts": {
-    "start": "node ./app.js",
-    "dev": "nodemon ./app.js",
+    "start": "node ./server/index.js",
+    "start:client": "parcel -p 3000 --open",
+    "start:server": "nodemon ./server/index.js",
+    "build": "parcel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jam Nguyen",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "buffer": "^6.0.3",
+    "nodemon": "^2.0.20",
+    "parcel": "^2.7.0",
+    "process": "^0.11.10"
   },
   "dependencies": {
+    "classnames": "^2.3.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.2",
     "express": "^4.18.1",
-    "express-ws": "^5.0.2"
+    "express-ws": "^5.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.1",
+    "socket.io": "^4.5.2",
+    "socket.io-client": "^4.5.2"
   }
 }

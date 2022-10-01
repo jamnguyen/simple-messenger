@@ -1,0 +1,39 @@
+.terminal {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 4rem;
+  overflow-y: auto;
+}
+
+.messages {
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+.messages .systemText {
+  color: gray;
+}
+
+.input {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+}
+.input .indicator {
+  display: inline-block;
+  margin-top: .2rem;
+}
+.input input {
+  background-color: transparent;
+  border: none;
+  caret-color: greenyellow;
+  color: greenyellow;
+  flex: 1;
+  font-size: 1.8rem;
+  padding: 0;
+}
+.input input:focus {
+  outline: none;
+}
