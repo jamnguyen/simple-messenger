@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import { useEffect, useRef, useState } from "react";
-import styles from './terminal.module.css';
+import * as styles from './terminal.module.css';
 
 export default function Terminal({ onNewInputText = () => {}, texts = [] }) {
   const [inputText, setInputText] = useState('');
@@ -14,7 +14,7 @@ export default function Terminal({ onNewInputText = () => {}, texts = [] }) {
     return texts.map(({from, message}, index) => {
       return (
         <p key={`terminal-text-${index}`} className={cx(!from && styles.systemText)}>
-          {from && <b className={cx(styles.hide)}>{from}: </b>}
+          {from && <b>{from}: </b>}
           {message}
         </p>
       );

@@ -1,5 +1,6 @@
 import express from "express";
 import { createServer } from "http";
+import path from "path";
 import { Server } from "socket.io";
 import { addUser, getUser, getUsers, removeUser } from "./db.js";
 
@@ -11,6 +12,13 @@ const io = new Server(server, {
 });
 
 app.use(express.json());
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("dist"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "dist", "index.html"));
+  });
+}
 
 app.get("/", (req, res) => {
   res.send("Simple Chat Room server.");
