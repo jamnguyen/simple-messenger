@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Terminal from "../components/Terminal/Terminal";
+import Terminal from "../components/Terminal/terminal";
 import { useApp } from "../contexts/app-provider";
 
 export default function Login() {
