@@ -17,16 +17,16 @@ const io = new Server(server, {
 app.use(cors());
 app.use(express.json());
 
+app.get("/api", (req, res) => {
+  res.send("Simple Chat Room server.");
+});
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("dist"));
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "dist", "index.html"));
   });
 }
-
-app.get("/", (req, res) => {
-  res.send("Simple Chat Room server.");
-});
 
 io.on("connection", (socket) => {
   socket.on("join", ({ username, room }) => {
