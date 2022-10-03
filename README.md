@@ -4,7 +4,7 @@ A simple application to demostrate how Websocket work.
 
 ## Stack
 
-| Side   | Package                    |
+| Side   | Tech                       |
 | ------ | -------------------------- |
 | Server | Node + Express + Socket.io |
 | Client | React + Parcel + Socket.io |
